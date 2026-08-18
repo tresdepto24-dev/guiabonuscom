@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas Bronceadas - Directorio BonusCom</title>
+    <style>
+        :root {
+            --bg-page: #f4efe6;
+            --container-bg: #fdfbf7;
+            --primary-brown: #5c3a21;
+            --accent-red: #8b0000;
+            --border-color: #c5b59b;
+            --text-main: #2c221e;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif, Georgia, serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .directory-sheet {
+            background-color: var(--container-bg);
+            border: 3px solid var(--primary-brown);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+            position: relative;
+        }
+        /* Encabezado */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-brown);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+            color: var(--primary-brown);
+            font-size: 2.2rem;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+        header p {
+            font-style: italic;
+            color: #6b5b52;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+        /* Barra de búsqueda interactiva */
+        .search-box {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .search-box input {
+            width: 80%;
+            padding: 10px 15px;
+            font-family: 'Times New Roman', serif;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+            border-radius: 4px;
+            color: var(--text-main);
+        }
+        /* Secciones y Categorías */
+        .category-bar {
+            background-color: var(--primary-brown);
+            color: #fff;
+            padding: 8px 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        /* Aviso Cuadrado Destacado */
+        .featured-ad {
+            border: 2px solid var(--primary-brown);
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            background-color: #fffaf0;
+        }
+        .featured-ad h3 {
+            color: var(--accent-red);
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        .featured-ad p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        /* Listado de comercios (Líneas de la guía) */
+        .listing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 8px 5px;
+            border-bottom: 1px dotted var(--border-color);
+            font-size: 1rem;
+        }
+        .listing-item:hover {
+            background-color: rgba(92, 58, 33, 0.03);
+        }
+        .listing-info {
+            font-weight: normal;
+        }
+        .listing-discount {
+            font-weight: bold;
+            color: var(--accent-red);
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #7a6e65;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="directory-sheet">
+        <header>
+            <h1>Páginas Bronceadas</h1>
+            <p>El Directorio Comercial de Mar del Plata — Beneficios BonusCom</p>
+        </header>
+
+        <!-- Buscador interactivo para filtrar comercios o calles al instante -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar comercio, zona o servicio (ej. Güemes, Restó)..." onkeyup="filtrarDirectorio()">
+        </div>
+
+        <div id="directorio-contenido">
+            <!-- CENTRO COMERCIAL CALLE GÜEMES -->
+            <div class="category-bar">Centro Comercial Calle Güemes</div>
+
+            <div class="featured-ad">
+                <h3>ESTETICA & MODA GÜEMES</h3>
+                <p>Indumentaria y accesorios exclusivos<br><strong>¡20% DE DESCUENTO CON TARJETA BONUSCOM!</strong></p>
+            </div>
+
+            <div class="listing-item" data-text="Tienda Mar del Plata Güemes 2500 15% off">
+                <span class="listing-info">Tienda Mar del Plata - Güemes 2500</span>
+                <span class="listing-discount">15% OFF</span>
+            </div>
+            <div class="listing-item" data-text="Café de la Costa Güemes 2700 10% off">
+                <span class="listing-info">Café de la Costa - Güemes 2700</span>
+                <span class="listing-discount">10% OFF</span>
+            </div>
+            <div class="listing-item" data-text="Kiosco El Faro Güemes 2850 5% off">
+                <span class="listing-info">Kiosco El Faro - Güemes 2850</span>
+                <span class="listing-discount">5% OFF (Base)</span>
+            </div>
+
+            <!-- AVENIDA CONSTITUCIÓN -->
+            <div class="category-bar">Avenida Constitución</div>
+
+            <div class="listing-item" data-text="Restó & Bar Constitución Av. Constitución 4300 20% off">
+                <span class="listing-info">Restó & Bar Constitución - Av. Constitución 4300</span>
+                <span class="listing-discount">20% OFF</span>
+            </div>
+            <div class="listing-item" data-text="Cervecería Artesanal Norte Av. Constitución 4600 15% off">
+                <span class="listing-info">Cervecería Artesanal Norte - Av. Constitución 4600</span>
+                <span class="listing-discount">15% OFF</span>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 BonusCom. Guía Interactiva Digital.
+        </footer>
+    </div>
+
+    <script>
+        // Función de interactividad: Filtra los comercios en tiempo real mientras escriben
+        function filtrarDirectorio() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('listing-item');
+
+            for (let i = 0; i < items.length; i++) {
+                let texto = items[i].getAttribute('data-text').toLowerCase();
+                if (texto.includes(input)) {
+                    items[i].style.display = "flex";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
